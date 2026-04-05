@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Scholarly Path - Study Schedule</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Lexend:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#55d7ed",
+                    "on-primary-fixed": "#001945",
+                    "tertiary-container": "#008393",
+                    "surface-container-high": "#e7e8e9",
+                    "on-surface": "#191c1d",
+                    "on-surface-variant": "#414754",
+                    "surface-variant": "#e1e3e4",
+                    "surface": "#f8f9fa",
+                    "outline-variant": "#c1c6d6",
+                    "surface-container-highest": "#e1e3e4",
+                    "primary": "#2b5ab5",
+                    "surface-dim": "#d9dadb",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed-dim": "#88d982",
+                    "secondary": "#1b6d24",
+                    "on-background": "#191c1d",
+                    "primary-fixed": "#d9e2ff",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f0f1f2",
+                    "background": "#f8f9fa",
+                    "on-tertiary-fixed": "#001f24",
+                    "on-primary-container": "#ffffff",
+                    "inverse-primary": "#b0c6ff",
+                    "outline": "#727785",
+                    "surface-bright": "#f8f9fa",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#002204",
+                    "on-secondary-container": "#217128",
+                    "on-tertiary-fixed-variant": "#004e59",
+                    "on-primary-fixed-variant": "#00429c",
+                    "on-secondary-fixed-variant": "#005312",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#edeeef",
+                    "secondary-fixed": "#a3f69c",
+                    "primary-container": "#4874cf",
+                    "surface-tint": "#2b5bb5",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#9eefff",
+                    "inverse-surface": "#2e3132",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#f3f4f5",
+                    "primary-fixed-dim": "#b0c6ff",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#006875",
+                    "secondary-container": "#a0f399",
+                    "on-tertiary-container": "#000607"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Lexend"],
+                    "label": ["Lexend"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Lexend', sans-serif; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-6 py-4 w-full h-16 bg-[#f8f9fa] dark:bg-slate-900 docked full-width top-0 z-40">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#2b5ab5] dark:text-blue-400" data-icon="auto_stories">auto_stories</span>
+<h1 class="Manrope display-sm font-bold text-[#191c1d] dark:text-white tracking-tight">The Scholarly Path</h1>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<nav class="flex gap-6 items-center">
+<a class="text-[#191c1d] dark:text-slate-400 font-medium hover:bg-[#f3f4f5] dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-xl" href="#">Home</a>
+<a class="text-[#191c1d] dark:text-slate-400 font-medium hover:bg-[#f3f4f5] dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-xl" href="#">Roadmap</a>
+<a class="text-[#2b5ab5] dark:text-blue-300 font-bold px-3 py-2 rounded-xl" href="#">Schedule</a>
+<a class="text-[#191c1d] dark:text-slate-400 font-medium hover:bg-[#f3f4f5] dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-xl" href="#">Quiz</a>
+</nav>
+<button class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="person">person</span>
+</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 pt-8">
+<!-- Hero Header -->
+<section class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-2xl">
+<span class="text-secondary font-semibold tracking-wide uppercase text-sm mb-2 block">Weekly Momentum</span>
+<h2 class="font-headline text-5xl font-extrabold text-on-surface leading-tight mb-4">Focus on your <span class="text-primary">Mastery</span></h2>
+<p class="text-on-surface-variant text-lg leading-relaxed">Your personalized learning rhythm is optimized for deep work. Stay consistent to unlock the next chapter of your roadmap.</p>
+</div>
+<a class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-white font-semibold rounded-xl transition-all hover:scale-[1.02] shadow-lg" href="#">
+                View Full Roadmap
+                <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Calendar Strip & Daily Focus -->
+<div class="lg:col-span-4 space-y-8">
+<!-- Mini Weekly Calendar -->
+<div class="bg-surface-container-lowest rounded-[2rem] p-6 shadow-[0_12px_40px_rgba(25,28,29,0.06)]">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline text-xl font-bold">September</h3>
+<div class="flex gap-2">
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-2">
+<div class="flex flex-col items-center gap-4">
+<span class="text-[10px] text-on-surface-variant/60 font-bold uppercase">M</span>
+<div class="w-10 h-10 flex items-center justify-center rounded-xl text-on-surface-variant font-medium">12</div>
+</div>
+<div class="flex flex-col items-center gap-4">
+<span class="text-[10px] text-on-surface-variant/60 font-bold uppercase">T</span>
+<div class="w-10 h-10 flex items-center justify-center rounded-xl text-on-surface-variant font-medium">13</div>
+</div>
+<div class="flex flex-col items-center gap-4">
+<span class="text-[10px] text-on-surface-variant/60 font-bold uppercase">W</span>
+<div class="w-10 h-10 flex items-center justify-center rounded-xl bg-primary text-white font-bold shadow-md">14</div>
+</div>
+<div class="flex flex-col items-center gap-4">
+<span class="text-[10px] text-on-surface-variant/60 font-bold uppercase">T</span>
+<div class="w-10 h-10 flex items-center justify-center rounded-xl text-on-surface-variant font-medium">15</div>
+</div>
+<div class="flex flex-col items-center gap-4">
+<span class="text-[10px] text-on-surface-variant/60 font-bold uppercase">F</span>
+<div class="w-10 h-10 flex items-center justify-center rounded-xl text-on-surface-variant font-medium">16</div>
+</div>
+<div class="flex flex-col items-center gap-4">
+<span class="text-[10px] text-on-surface-variant/60 font-bold uppercase">S</span>
+<div class="w-10 h-10 flex items-center justify-center rounded-xl text-on-surface-variant font-medium">17</div>
+</div>
+<div class="flex flex-col items-center gap-4">
+<span class="text-[10px] text-on-surface-variant/60 font-bold uppercase">S</span>
+<div class="w-10 h-10 flex items-center justify-center rounded-xl text-on-surface-variant font-medium">18</div>
+</div>
+</div>
+</div>
+<!-- Stats/Progress Card -->
+<div class="relative overflow-hidden bg-surface-container-highest rounded-[2rem] p-8 text-on-surface">
+<div class="relative z-10">
+<h4 class="font-headline text-lg font-bold mb-2">Daily Progress</h4>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="text-4xl font-extrabold text-secondary">65%</span>
+<span class="text-on-surface-variant text-sm font-medium">completed today</span>
+</div>
+<div class="h-3 w-full bg-white/50 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-secondary to-secondary-fixed w-[65%] rounded-full"></div>
+</div>
+</div>
+<!-- Decorative Graphic -->
+<div class="absolute -right-10 -bottom-10 w-40 h-40 bg-secondary-container/30 rounded-full blur-3xl"></div>
+</div>
+<!-- Quick Tip -->
+<div class="bg-primary/5 rounded-[2rem] p-6 border-l-4 border-primary">
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-primary" data-icon="lightbulb">lightbulb</span>
+<div>
+<h5 class="font-bold text-on-surface mb-1">Study Tip</h5>
+<p class="text-sm text-on-surface-variant leading-relaxed">Try the Pomodoro technique during your Flexbox session to maintain high cognitive focus.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Timeline Tasks -->
+<div class="lg:col-span-8 space-y-6">
+<div class="flex justify-between items-center mb-2 px-2">
+<h3 class="font-headline text-2xl font-bold">Today's Schedule</h3>
+<div class="flex gap-2">
+<button class="bg-surface-container-low px-4 py-2 rounded-full text-sm font-medium hover:bg-surface-container-high transition-colors">Day View</button>
+<button class="bg-white px-4 py-2 rounded-full text-sm font-semibold shadow-sm text-primary">Week View</button>
+</div>
+</div>
+<!-- Timeline Container -->
+<div class="space-y-4">
+<!-- Task 1: Completed -->
+<div class="group flex gap-6 items-start">
+<div class="flex flex-col items-center pt-2">
+<span class="text-sm font-bold text-on-surface-variant/40">08:00</span>
+<div class="w-0.5 h-full bg-surface-variant mt-4 rounded-full"></div>
+</div>
+<div class="flex-1 bg-surface-container-low rounded-3xl p-6 flex justify-between items-center opacity-60">
+<div class="flex gap-6 items-center">
+<div class="w-12 h-12 rounded-2xl bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="check_circle">check_circle</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-lg line-through">Review Yesterday's Notes</h4>
+<p class="text-sm text-on-surface-variant">Foundations of Modern Web Design</p>
+</div>
+</div>
+<span class="text-xs font-bold uppercase tracking-widest text-secondary">Done</span>
+</div>
+</div>
+<!-- Task 2: Active -->
+<div class="group flex gap-6 items-start">
+<div class="flex flex-col items-center pt-2">
+<span class="text-sm font-bold text-primary">09:00</span>
+<div class="w-0.5 h-full bg-primary/20 mt-4 rounded-full"></div>
+</div>
+<div class="flex-1 bg-surface-container-lowest rounded-[2rem] p-8 shadow-[0_20px_50px_rgba(43,90,181,0.1)] border-l-[6px] border-primary transition-transform hover:scale-[1.01]">
+<div class="flex flex-col md:flex-row justify-between md:items-center gap-6">
+<div class="flex gap-6 items-center">
+<div class="w-16 h-16 rounded-3xl bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="auto_awesome_motion">auto_awesome_motion</span>
+</div>
+<div>
+<span class="text-xs font-bold text-primary uppercase tracking-widest">Active Now</span>
+<h4 class="font-headline font-bold text-2xl mt-1">Master CSS Flexbox</h4>
+<p class="text-on-surface-variant mt-1">Interactive drills and layout challenges</p>
+</div>
+</div>
+<div class="flex flex-col items-end gap-2">
+<div class="text-sm font-medium text-on-surface-variant">Progress: 45m / 90m</div>
+<div class="w-32 h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-1/2 rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="mt-8 flex gap-3">
+<button class="px-6 py-2 bg-primary text-white rounded-xl text-sm font-bold hover:shadow-lg transition-all">Continue Session</button>
+<button class="px-6 py-2 bg-surface-container-high text-on-surface-variant rounded-xl text-sm font-bold hover:bg-surface-container-highest transition-colors">Resources</button>
+</div>
+</div>
+</div>
+<!-- Task 3: Upcoming -->
+<div class="group flex gap-6 items-start">
+<div class="flex flex-col items-center pt-2">
+<span class="text-sm font-bold text-on-surface-variant">11:00</span>
+<div class="w-0.5 h-full bg-surface-variant mt-4 rounded-full"></div>
+</div>
+<div class="flex-1 bg-surface-container-low rounded-[2rem] p-6 hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex justify-between items-center">
+<div class="flex gap-6 items-center">
+<div class="w-12 h-12 rounded-2xl bg-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="coffee">coffee</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-lg">Recharge &amp; Reflection</h4>
+<p class="text-sm text-on-surface-variant">Mindfulness break and healthy snack</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="more_horiz">more_horiz</span>
+</div>
+</div>
+</div>
+<!-- Task 4: Upcoming -->
+<div class="group flex gap-6 items-start">
+<div class="flex flex-col items-center pt-2">
+<span class="text-sm font-bold text-on-surface-variant">12:30</span>
+<div class="w-0.5 h-24 bg-surface-variant mt-4 rounded-full"></div>
+</div>
+<div class="flex-1 bg-surface-container-low rounded-[2rem] p-6 hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex justify-between items-center">
+<div class="flex gap-6 items-center">
+<div class="w-12 h-12 rounded-2xl bg-white flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="quiz">quiz</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-lg">Weekly Quiz: CSS Selectors</h4>
+<p class="text-sm text-on-surface-variant">Validating depth of understanding</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="lock">lock</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#ffffffcc] dark:bg-slate-900/80 backdrop-blur-xl rounded-t-3xl shadow-[0_-12px_40px_rgba(25,28,29,0.06)] md:hidden">
+<a class="flex flex-col items-center justify-center text-[#191c1d]/60 dark:text-slate-400 p-3 hover:bg-[#f3f4f5] dark:hover:bg-slate-800 rounded-2xl" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="Lexend label-md font-medium text-[10px] mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#191c1d]/60 dark:text-slate-400 p-3 hover:bg-[#f3f4f5] dark:hover:bg-slate-800 rounded-2xl" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="Lexend label-md font-medium text-[10px] mt-1">Roadmap</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#2b5ab5] to-[#2b5ab5]/80 text-white rounded-2xl p-3 scale-[0.95] shadow-lg" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="Lexend label-md font-medium text-[10px] mt-1">Schedule</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#191c1d]/60 dark:text-slate-400 p-3 hover:bg-[#f3f4f5] dark:hover:bg-slate-800 rounded-2xl" href="#">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="Lexend label-md font-medium text-[10px] mt-1">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#191c1d]/60 dark:text-slate-400 p-3 hover:bg-[#f3f4f5] dark:hover:bg-slate-800 rounded-2xl" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="Lexend label-md font-medium text-[10px] mt-1">Profile</span>
+</a>
+</nav>
+<!-- Floating Action Button (Optional contextual use) -->
+<button class="fixed right-6 bottom-24 md:bottom-12 w-14 h-14 bg-primary text-white rounded-2xl shadow-xl flex items-center justify-center transition-transform active:scale-95 z-40">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</body></html>

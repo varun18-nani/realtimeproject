@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Scholarly Path - Personalized Roadmap</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Lexend:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#001f24",
+                    "on-secondary-fixed-variant": "#005312",
+                    "secondary-fixed-dim": "#88d982",
+                    "tertiary-fixed-dim": "#55d7ed",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#000607",
+                    "on-secondary-fixed": "#002204",
+                    "on-surface": "#191c1d",
+                    "surface-tint": "#2b5bb5",
+                    "secondary": "#1b6d24",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#00429c",
+                    "on-primary-fixed": "#001945",
+                    "tertiary-container": "#008393",
+                    "surface-variant": "#e1e3e4",
+                    "error": "#ba1a1a",
+                    "primary-container": "#4874cf",
+                    "on-secondary-container": "#217128",
+                    "surface-container-low": "#f3f4f5",
+                    "tertiary": "#006875",
+                    "secondary-fixed": "#a3f69c",
+                    "primary-fixed-dim": "#b0c6ff",
+                    "surface-container-highest": "#e1e3e4",
+                    "inverse-primary": "#b0c6ff",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#d9e2ff",
+                    "surface": "#f8f9fa",
+                    "on-surface-variant": "#414754",
+                    "tertiary-fixed": "#9eefff",
+                    "on-error": "#ffffff",
+                    "outline-variant": "#c1c6d6",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#004e59",
+                    "surface-bright": "#f8f9fa",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#e7e8e9",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#f8f9fa",
+                    "on-primary-container": "#ffffff",
+                    "outline": "#727785",
+                    "surface-dim": "#d9dadb",
+                    "inverse-surface": "#2e3132",
+                    "inverse-on-surface": "#f0f1f2",
+                    "on-background": "#191c1d",
+                    "secondary-container": "#a0f399",
+                    "surface-container": "#edeeef",
+                    "primary": "#2b5ab5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Lexend"],
+                    "label": ["Lexend"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-effect {
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-sm dark:shadow-none flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<button class="hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-full transition-colors p-2 flex items-center justify-center">
+<span class="material-symbols-outlined text-blue-700 dark:text-blue-400">menu</span>
+</button>
+<h1 class="text-xl font-bold tracking-tight text-blue-900 dark:text-blue-100 font-headline">The Scholarly Path</h1>
+</div>
+<button class="hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-full transition-colors p-2 flex items-center justify-center">
+<span class="material-symbols-outlined text-blue-700 dark:text-blue-400">notifications</span>
+</button>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-5xl mx-auto">
+<!-- Hero Section: Selected Goal -->
+<section class="mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<span class="text-secondary font-semibold font-label tracking-widest text-xs uppercase mb-2 block">Current Focus</span>
+<h2 id="focus-title" class="text-4xl md:text-5xl font-extrabold font-headline text-on-surface tracking-tight leading-tight">Your Path</h2>
+</div>
+<div class="flex-shrink-0">
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary font-semibold px-8 py-4 rounded-xl shadow-lg hover:opacity-90 active:scale-95 transition-all flex items-center gap-2">
+<span>View Today's Schedule</span>
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Progress Metrics -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<div class="md:col-span-2 bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_40px_rgba(25,28,29,0.06)] flex flex-col justify-between">
+<div>
+<h3 class="font-headline font-bold text-xl mb-6">Job-Ready Status</h3>
+<div class="relative h-4 w-full bg-surface-variant rounded-full overflow-hidden">
+<div class="absolute top-0 left-0 h-full bg-gradient-to-r from-secondary to-secondary-container rounded-full" style="width: 68%;"></div>
+</div>
+</div>
+<div class="flex justify-between items-center mt-6">
+<span class="text-on-surface-variant text-sm font-medium">68% Competency achieved</span>
+<span class="text-secondary font-bold text-lg">Level 4: Advanced</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-5xl text-primary mb-4" style="font-variation-settings: 'FILL' 1;">stars</span>
+<p class="font-headline font-bold text-2xl">14 Milestones</p>
+<p class="text-on-surface-variant text-sm">Remaining to unlock internships</p>
+</div>
+</section>
+<!-- The Roadmap Timeline -->
+<section class="relative">
+<div class="absolute left-[27px] top-4 bottom-4 w-2 bg-surface-variant rounded-full"></div>
+<div id="roadmap-container" class="space-y-12">
+    <!-- Milestones will be injected here by JS -->
+</div>
+</section>
+<!-- Personalized Mentor Quote / Bento Tip -->
+<section class="mt-16 bg-on-tertiary-fixed text-tertiary-fixed p-8 rounded-3xl relative overflow-hidden">
+<div class="relative z-10">
+<span class="material-symbols-outlined text-4xl mb-4">format_quote</span>
+<p class="text-2xl font-headline font-bold italic mb-4 leading-snug">"The key to systems design isn't just knowing the tools, but understanding how they communicate under stress."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-white/20">
+<img alt="Mentor" class="w-full h-full object-cover" data-alt="Close-up portrait of a professional mentor in a modern office with warm lighting and a focused expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXlm0mKeFkMHQ07EbmN_R1qJvpzwCMNDkK71tVA0StWdyX5kwbp22keyo2CAdrpfeGbe96Q9KnBHAY_x6a7twUhYS653-3022xXNQRrJn9EAVeA-FavkUuTd_stKuhFN88a4TmfobRRmqkm68cNAqwXkCRprRxmWd_m7paxTngAugZ8QER0t1KOJJI4AhpxX6H3otXKEckmDPrzm-7klf2qfZA-Py6eO82EmDwt4rsVaWar6xWGCoqNOXrIR1UllGm0PeOecQlNVY"/>
+</div>
+<div>
+<p class="text-white font-bold text-sm">Marcus Chen</p>
+<p class="text-tertiary-fixed-dim text-xs">Senior Architect at CloudScale</p>
+</div>
+</div>
+</div>
+<!-- Decorative Background Element -->
+<div class="absolute -right-16 -bottom-16 w-64 h-64 bg-tertiary/20 rounded-full blur-3xl"></div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-3 pb-6 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl z-50 rounded-t-3xl shadow-[0_-8px_30px_rgb(0,0,0,0.04)] border-t border-slate-100 dark:border-slate-800">
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-lexend text-[11px] font-medium tracking-wide">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-emerald-100/50 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 rounded-2xl px-5 py-2 scale-90 duration-200 ease-out" href="../personalized_roadmap/code.html">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">route</span>
+<span class="font-lexend text-[11px] font-medium tracking-wide">Roadmap</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" href="../knowledge_check_quiz/code.html">
+<span class="material-symbols-outlined mb-1">quiz</span>
+<span class="font-lexend text-[11px] font-medium tracking-wide">Quiz</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-5 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" href="../your_progress_profile/code.html">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-lexend text-[11px] font-medium tracking-wide">Profile</span>
+</a>
+</nav>
+
+<script>
+    const API_BASE_URL = 'http://127.0.0.1:8000';
+    
+    async function loadRoadmap() {
+        const goal = localStorage.getItem('userGoal') || 'Software Developer';
+        document.getElementById('focus-title').innerText = goal + " Path";
+
+        try {
+            const response = await fetch(`${API_BASE_URL}/roadmap/${encodeURIComponent(goal)}`);
+            const data = await response.json();
+            
+            const container = document.getElementById('roadmap-container');
+            container.innerHTML = ''; // clear
+
+            data.schedule.forEach((item, index) => {
+                let statusBg = "bg-primary";
+                let statusIcon = "pending";
+                let statusLabel = "PENDING";
+                
+                if(index === 0) {
+                    statusBg = "bg-secondary";
+                    statusIcon = "check_circle";
+                    statusLabel = "COMPLETED";
+                }
+
+                container.innerHTML += `
+                    <div class="relative pl-16 group">
+                        <div class="absolute left-0 top-2 w-14 h-14 ${statusBg} text-white rounded-full flex items-center justify-center z-10 shadow-md">
+                            <span class="material-symbols-outlined">${statusIcon}</span>
+                        </div>
+                        <div class="bg-surface-container-lowest p-6 rounded-xl border-l-4 border-outline hover:shadow-xl transition-all duration-300">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <span class="bg-surface-variant text-on-surface-variant text-[10px] font-bold px-3 py-1 rounded-full mb-2 inline-block">${statusLabel}</span>
+                                    <h4 class="text-xl font-bold font-headline">Day ${item.day}: ${item.topic}</h4>
+                                </div>
+                                <span class="material-symbols-outlined text-outline">school</span>
+                            </div>
+                            <button onclick="markComplete('${item.topic}')" class="mt-2 flex items-center gap-2 text-sm text-primary font-bold ${index === 0 ? 'hidden' : ''}">
+                                Mark as Complete <span class="material-symbols-outlined text-sm">done</span>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+            
+        } catch (error) {
+            console.error('Error loading roadmap:', error);
+        }
+    }
+
+    async function markComplete(topic) {
+        const userId = localStorage.getItem('userId') || 1;
+        
+        try {
+            const response = await fetch(`${API_BASE_URL}/progress`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ user_id: parseInt(userId), course: topic, progress: 100 })
+            });
+            alert("Progress saved!");
+        } catch (error) {
+            console.error('Progress update error:', error);
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", loadRoadmap);
+</script>
+</body></html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Scholarly Path - Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Lexend:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "on-tertiary-fixed": "#001f24",
+                "on-secondary-fixed-variant": "#005312",
+                "secondary-fixed-dim": "#88d982",
+                "tertiary-fixed-dim": "#55d7ed",
+                "on-error-container": "#93000a",
+                "on-tertiary-container": "#000607",
+                "on-secondary-fixed": "#002204",
+                "on-surface": "#191c1d",
+                "surface-tint": "#2b5bb5",
+                "secondary": "#1b6d24",
+                "error-container": "#ffdad6",
+                "on-primary-fixed-variant": "#00429c",
+                "on-primary-fixed": "#001945",
+                "tertiary-container": "#008393",
+                "surface-variant": "#e1e3e4",
+                "error": "#ba1a1a",
+                "primary-container": "#4874cf",
+                "on-secondary-container": "#217128",
+                "surface-container-low": "#f3f4f5",
+                "tertiary": "#006875",
+                "secondary-fixed": "#a3f69c",
+                "primary-fixed-dim": "#b0c6ff",
+                "surface-container-highest": "#e1e3e4",
+                "inverse-primary": "#b0c6ff",
+                "on-tertiary": "#ffffff",
+                "primary-fixed": "#d9e2ff",
+                "surface": "#f8f9fa",
+                "on-surface-variant": "#414754",
+                "tertiary-fixed": "#9eefff",
+                "on-error": "#ffffff",
+                "outline-variant": "#c1c6d6",
+                "on-primary": "#ffffff",
+                "on-tertiary-fixed-variant": "#004e59",
+                "surface-bright": "#f8f9fa",
+                "on-secondary": "#ffffff",
+                "surface-container-high": "#e7e8e9",
+                "surface-container-lowest": "#ffffff",
+                "background": "#f8f9fa",
+                "on-primary-container": "#ffffff",
+                "outline": "#727785",
+                "surface-dim": "#d9dadb",
+                "inverse-surface": "#2e3132",
+                "inverse-on-surface": "#f0f1f2",
+                "on-background": "#191c1d",
+                "secondary-container": "#a0f399",
+                "surface-container": "#edeeef",
+                "primary": "#2b5ab5"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "2xl": "1rem",
+                "3xl": "1.5rem",
+                "full": "9999px"
+              },
+              "fontFamily": {
+                "headline": ["Manrope"],
+                "body": ["Lexend"],
+                "label": ["Lexend"]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(24px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface antialiased min-h-screen">
+<header class="fixed top-0 w-full z-50 bg-slate-50/80 backdrop-blur-xl shadow-sm flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-slate-500 hover:bg-slate-200/50 rounded-full transition-colors p-2" data-icon="menu">menu</button>
+<h1 class="text-xl font-bold tracking-tight text-blue-900 font-headline">The Scholarly Path</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="material-symbols-outlined text-slate-500 hover:bg-slate-200/50 rounded-full transition-colors p-2" data-icon="notifications">notifications</button>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-5xl mx-auto">
+<section class="grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr] gap-12 items-start">
+<div class="space-y-10">
+<div class="space-y-4">
+<span class="font-label text-secondary font-semibold tracking-widest uppercase text-xs">Start Your Journey</span>
+<h2 class="text-4xl md:text-5xl font-extrabold font-headline leading-tight text-on-surface">
+                        Illuminate Your <span class="text-primary italic">Professional Destiny.</span>
+</h2>
+<p class="text-lg text-on-surface-variant max-w-xl leading-relaxed">
+                        Welcome to a personalized career navigation experience. We don't just find jobs; we architect the skills, milestones, and knowledge required for your specific peak.
+                    </p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-3xl shadow-[0_12px_40px_rgba(25,28,29,0.06)] space-y-8 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-secondary-fixed"></div>
+<h3 class="text-xl font-bold font-headline">Personal Profile</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<input id="onboard-name" class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-outline" placeholder="Alex Sterling" type="text"/>
+</div>
+<div class="space-y-2">
+<input id="onboard-email" class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-outline" placeholder="alex@scholarly.edu" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium text-on-surface-variant px-1">Password</label>
+<input id="onboard-password" class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-outline" placeholder="••••••••" type="password"/>
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="text-sm font-medium text-on-surface-variant px-1">Current Education Level</label>
+<select class="w-full bg-surface-container-highest border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/20 transition-all text-on-surface appearance-none">
+<option>Undergraduate Student</option>
+<option>Graduate Student</option>
+<option>PhD Candidate</option>
+<option>Career Transitioner</option>
+</select>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="flex items-end gap-3">
+<h3 class="text-2xl font-bold font-headline">Choose Your Path</h3>
+<span class="text-secondary font-medium mb-1 text-sm">Select one to begin</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div id="path-software" data-goal="Software Developer" class="goal-card group cursor-pointer relative bg-surface-container-lowest p-6 rounded-3xl border-2 border-transparent hover:border-primary/30 transition-all hover:bg-white hover:scale-[1.02]">
+<div class="w-12 h-12 bg-primary-fixed rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+</div>
+<h4 class="font-bold font-headline text-on-surface">Software Developer</h4>
+<p class="text-xs text-on-surface-variant mt-2">Build robust systems and digital foundations.</p>
+</div>
+<div id="path-data" data-goal="Data Scientist" class="goal-card group cursor-pointer relative bg-white ring-2 ring-primary p-6 rounded-3xl transition-all scale-[1.02] shadow-xl shadow-primary/5">
+<div class="absolute top-4 right-4 bg-primary text-white p-1 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]" data-icon="check" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="w-12 h-12 bg-secondary-fixed rounded-2xl flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary" data-icon="query_stats">query_stats</span>
+</div>
+<h4 class="font-bold font-headline text-on-surface">Data Scientist</h4>
+<p class="text-xs text-on-surface-variant mt-2">Extract wisdom from data and lead strategy.</p>
+</div>
+<div id="path-web" data-goal="Web Developer" class="goal-card group cursor-pointer relative bg-surface-container-lowest p-6 rounded-3xl border-2 border-transparent hover:border-primary/30 transition-all hover:bg-white hover:scale-[1.02]">
+<div class="w-12 h-12 bg-tertiary-fixed rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary" data-icon="web">web</span>
+</div>
+<h4 class="font-bold font-headline text-on-surface">Web Developer</h4>
+<p class="text-xs text-on-surface-variant mt-2">Craft beautiful, responsive user experiences.</p>
+</div>
+</div>
+</div>
+<div class="pt-6">
+<button id="submit-onboard-btn" class="w-full md:w-auto bg-gradient-to-r from-primary to-primary-container text-white font-bold px-12 py-5 rounded-3xl shadow-xl shadow-primary/20 hover:opacity-90 active:scale-95 transition-all text-lg flex items-center justify-center gap-3">
+                        Generate My Roadmap
+                        <span class="material-symbols-outlined" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</button>
+<p class="text-center md:text-left text-xs text-on-surface-variant mt-4 px-2">
+                        By proceeding, you agree to our curated learning philosophy and privacy terms.
+                    </p>
+</div>
+</div>
+<aside class="hidden md:flex flex-col gap-6 sticky top-24">
+<div class="bg-surface-container-low rounded-3xl overflow-hidden aspect-square relative group">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="conceptual art of a digital roadmap glowing path through a futuristic library at sunset with soft blue and green lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuFYmW_s4dNkQfBMOYGwUnuZNZD4GZ4GzmFK2r_6rwXXU1EhQTyotZaTRtdScV_nFJ-FF9lObQrIXSvbCgWD9B7-_udnpXHXPuEqMTJXqaX1VpprWu2H5CXz0ShdODxlErcsToSIptOgQnBVDQzcmUvr6A3wEOjr6A95x20mOq5n-B7CX7P2xFM2Ad4xmCbeqUTTv_hIflKhZyDXyZIdhEmGYAOMvC1t0hDBauNP9NF7RwJ7IulYHQCuyEv0wIY0Lb6b6Td_Ij_zo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-8">
+<div class="text-white">
+<p class="text-sm font-medium opacity-80 mb-1">Your Future State</p>
+<h4 class="text-2xl font-bold font-headline">The Guided Path</h4>
+</div>
+</div>
+</div>
+<div class="bg-secondary-container rounded-3xl p-6 text-on-secondary-container">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined" data-icon="lightbulb" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<span class="font-bold font-headline">Career Insight</span>
+</div>
+<p class="text-sm leading-relaxed opacity-90">
+                        Students who follow a structured roadmap are 3x more likely to secure internships in their first year of study.
+                    </p>
+</div>
+</aside>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-3 pb-6 bg-white/80 backdrop-blur-xl border-t border-slate-100 shadow-[0_-8px_30px_rgb(0,0,0,0.04)] z-50">
+<div class="flex flex-col items-center justify-center text-slate-500 px-5 py-2 hover:bg-slate-100 transition-all">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-lexend text-[11px] font-medium tracking-wide">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-emerald-100/50 text-emerald-800 rounded-2xl px-5 py-2 scale-90 duration-200 ease-out">
+<span class="material-symbols-outlined" data-icon="route" style="font-variation-settings: 'FILL' 1;">route</span>
+<span class="font-lexend text-[11px] font-medium tracking-wide">Roadmap</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 px-5 py-2 hover:bg-slate-100 transition-all">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-lexend text-[11px] font-medium tracking-wide">Schedule</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 px-5 py-2 hover:bg-slate-100 transition-all">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<span class="font-lexend text-[11px] font-medium tracking-wide">Quiz</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 px-5 py-2 hover:bg-slate-100 transition-all">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-lexend text-[11px] font-medium tracking-wide">Profile</span>
+</div>
+</nav>
+
+<script>
+    const API_BASE_URL = 'http://127.0.0.1:8000';
+    let selectedGoal = "Data Scientist"; // default as it's highlighted initially
+
+    // Handle Goal Selection Styling
+    const goalCards = document.querySelectorAll('.goal-card');
+    goalCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            // Reset all cards
+            goalCards.forEach(c => {
+                c.classList.remove('ring-2', 'ring-primary', 'shadow-xl', 'shadow-primary/5', 'bg-white', 'scale-[1.02]');
+                c.classList.add('border-2', 'border-transparent', 'bg-surface-container-lowest');
+                // Remove checkmark if any
+                const check = c.querySelector('.absolute.top-4.right-4');
+                if (check) check.remove();
+            });
+
+            // Activate clicked card
+            card.classList.remove('border-2', 'border-transparent', 'bg-surface-container-lowest');
+            card.classList.add('ring-2', 'ring-primary', 'shadow-xl', 'shadow-primary/5', 'bg-white', 'scale-[1.02]');
+            
+            // Add checkmark
+            const checkHTML = `
+                <div class="absolute top-4 right-4 bg-primary text-white p-1 rounded-full flex items-center justify-center">
+                    <span class="material-symbols-outlined text-[16px]" data-icon="check" style="font-variation-settings: 'FILL' 1;">check</span>
+                </div>
+            `;
+            card.insertAdjacentHTML('afterbegin', checkHTML);
+
+            selectedGoal = card.getAttribute('data-goal');
+        });
+    });
+
+    document.getElementById('submit-onboard-btn').addEventListener('click', async () => {
+        const name = document.getElementById('onboard-name').value;
+        const email = document.getElementById('onboard-email').value;
+        const password = document.getElementById('onboard-password').value;
+
+        if (!name || !email || !password || !selectedGoal) {
+            alert("Please fill out your name, email, password, and select a path.");
+            return;
+        }
+
+        try {
+            const response = await fetch(`${API_BASE_URL}/register`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, password, goal: selectedGoal })
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                alert(`Registration Failed: ${errorData.detail || 'Email may already be registered'}`);
+                return;
+            }
+
+            const data = await response.json();
+
+            // Store in localStorage
+            // The API returns the created user dict
+            localStorage.setItem('userId', data.id);
+            localStorage.setItem('userName', data.name);
+            localStorage.setItem('userEmail', data.email);
+            localStorage.setItem('userGoal', data.goal);
+
+            window.location.href = '../personalized_roadmap/code.html';
+
+        } catch (error) {
+            console.error('Registration Error:', error);
+            alert("A network error occurred. Please make sure the backend is running.");
+        }
+    });
+</script>
+</body></html>
