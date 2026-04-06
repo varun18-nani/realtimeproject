@@ -20,7 +20,7 @@ frontend_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "fronten
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allows all origins for local web development
+    allow_origins=["*"],  # Allows all origins (essential for GitHub Pages -> Local Backend)
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

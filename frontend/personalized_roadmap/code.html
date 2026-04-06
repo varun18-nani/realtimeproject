@@ -228,8 +228,22 @@
         document.getElementById('focus-title').innerText = goal + " Path";
 
         try {
-            // 1. Generate Roadmap locally
-            const schedule = generateRoadmapData(goal);
+            // 1. Try to Fetch from Python Backend
+            let schedule = [];
+            try {
+                const response = await fetch(`${BACKEND_URL}/roadmap/${encodeURIComponent(goal)}`);
+                if (response.ok) {
+                    const data = await response.json();
+                    schedule = data.schedule;
+                    console.log("Using Backend Roadmap");
+                } else {
+                    throw new Error("Backend unreachable");
+                }
+            } catch (err) {
+                // FALLBACK: Generate Roadmap locally
+                console.warn("Backend not found, using client-side generator");
+                schedule = generateRoadmapData(goal);
+            }
             
             // 2. Fetch completed topics from Firestore
             let completedTopics = [];

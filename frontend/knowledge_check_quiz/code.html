@@ -337,7 +337,20 @@
     async function loadQuiz() {
         const goal = localStorage.getItem('userGoal') || 'Software Developer';
         try {
-            const quizData = getQuizQuestions(goal);
+            let quizData = [];
+            try {
+                const response = await fetch(`${BACKEND_URL}/quiz/${encodeURIComponent(goal)}`);
+                if (response.ok) {
+                    quizData = await response.json();
+                    console.log("Using Backend Quiz Data");
+                } else {
+                    throw new Error("Backend unreachable");
+                }
+            } catch (err) {
+                // FALLBACK: Generate Quiz locally
+                console.warn("Backend not found, using client-side generator");
+                quizData = getQuizQuestions(goal);
+            }
             
             const container = document.getElementById('quiz-container');
             container.innerHTML = '';
