@@ -1,73 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Career Roadmap Platform</title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>The Scholarly Path - Your Career Journey</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Lexend:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2b5ab5",
+                        secondary: "#1b6d24",
+                        surface: "#f8f9fa",
+                        "on-surface": "#191c1d",
+                        "primary-container": "#4874cf"
+                    },
+                    fontFamily: {
+                        headline: ["Manrope"],
+                        body: ["Lexend"]
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        .container {
-            background-color: #1e293b;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            text-align: center;
+        .hero-gradient {
+            background: radial-gradient(circle at center, rgba(43, 90, 181, 0.08) 0%, transparent 70%);
         }
-        h1 {
-            margin-top: 0;
-            margin-bottom: 20px;
-            font-size: 24px;
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
-        .btn {
-            display: inline-block;
-            background-color: #3b82f6;
-            color: white;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: background-color 0.2s;
-        }
-        .btn:hover {
-            background-color: #2563eb;
-        }
-        .links-container {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .secondary-link {
-            color: #94a3b8;
-            text-decoration: none;
-            font-size: 14px;
-        }
-        .secondary-link:hover {
-            color: #cbd5e1;
-            text-decoration: underline;
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>Career Roadmap Previews</h1>
-        <a href="./login_integrated_journey/code.html" class="btn">Launch Platform (Login)</a>
-        
-        <div class="links-container">
-            <a href="./onboarding_goal_selection/code.html" class="secondary-link">Onboarding Goal Selection</a>
-            <a href="./personalized_roadmap/code.html" class="secondary-link">Personalized Roadmap</a>
-            <a href="./knowledge_check_quiz/code.html" class="secondary-link">Knowledge Check Quiz</a>
-            <a href="./your_progress_profile/code.html" class="secondary-link">Progress Profile</a>
-        </div>
+<body class="bg-[#f8f9fa] font-body text-[#191c1d] selection:bg-primary/20">
+    <!-- Background Accents -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+        <div class="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary/5 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-secondary/5 rounded-full blur-[100px]"></div>
     </div>
+
+    <nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl border-b border-gray-100 flex justify-between items-center px-8 py-4">
+        <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-3xl">school</span>
+            <span class="font-headline font-extrabold text-xl tracking-tight">The Scholarly Path</span>
+        </div>
+        <a href="./login_integrated_journey/code.html" class="bg-primary text-white px-6 py-2.5 rounded-full font-bold shadow-lg shadow-primary/20 hover:scale-[1.05] transition-transform">
+            Sign In
+        </a>
+    </nav>
+
+    <main class="min-h-screen flex flex-col items-center justify-center pt-24 px-6 relative overflow-hidden">
+        <!-- Hero Section -->
+        <div class="max-w-4xl w-full text-center space-y-8 relative z-10">
+            <div class="inline-flex items-center gap-2 bg-white/80 border border-blue-100 px-4 py-2 rounded-full shadow-sm animate-float">
+                <span class="material-symbols-outlined text-primary text-sm">auto_awesome</span>
+                <span class="text-primary text-xs font-bold uppercase tracking-widest leading-none">Powered by AI</span>
+            </div>
+            
+            <h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1]">
+                Master Your Career<br/>
+                <span class="text-primary">One Step at a Time</span>
+            </h1>
+            
+            <p class="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                Connect your passions to the industry's most in-demand skills. Personalized roadmaps, AI-driven insights, and a community that cares.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
+                <a href="./onboarding_goal_selection/code.html" class="w-full sm:w-auto bg-gradient-to-br from-primary to-primary-container text-white px-10 py-5 rounded-2xl font-extrabold text-xl shadow-[0_20px_50px_rgba(43,90,181,0.3)] hover:brightness-110 transition-all active:scale-[0.98]">
+                    Get Started Free
+                </a>
+                <a href="./login_integrated_journey/code.html" class="w-full sm:w-auto bg-white text-gray-700 border border-gray-100 px-10 py-5 rounded-2xl font-bold text-xl hover:bg-gray-50 transition-all">
+                    Sign In
+                </a>
+            </div>
+        </div>
+
+        <!-- Featured Modules -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl w-full mt-24 mb-12">
+            <a href="./onboarding_goal_selection/code.html" class="group bg-white p-6 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all">
+                <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined">trending_up</span>
+                </div>
+                <h3 class="font-bold text-sm mb-1 uppercase tracking-tight opacity-50">Discovery</h3>
+                <p class="font-bold text-lg font-headline">Goal Selection</p>
+            </a>
+            <a href="./personalized_roadmap/code.html" class="group bg-white p-6 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all">
+                <div class="w-12 h-12 bg-emerald-50 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined">route</span>
+                </div>
+                <h3 class="font-bold text-sm mb-1 uppercase tracking-tight opacity-50">Pathways</h3>
+                <p class="font-bold text-lg font-headline">Smart Roadmap</p>
+            </a>
+            <a href="./knowledge_check_quiz/code.html" class="group bg-white p-6 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all">
+                <div class="w-12 h-12 bg-violet-50 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-violet-500 group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined">quiz</span>
+                </div>
+                <h3 class="font-bold text-sm mb-1 uppercase tracking-tight opacity-50">Assessment</h3>
+                <p class="font-bold text-lg font-headline">Knowledge Quiz</p>
+            </a>
+            <a href="./your_progress_profile/code.html" class="group bg-white p-6 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all">
+                <div class="w-12 h-12 bg-orange-50 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                    <span class="material-symbols-outlined">person</span>
+                </div>
+                <h3 class="font-bold text-sm mb-1 uppercase tracking-tight opacity-50">Account</h3>
+                <p class="font-bold text-lg font-headline">Progress Profile</p>
+            </a>
+        </div>
+    </main>
+
+    <footer class="w-full max-w-5xl mx-auto px-6 py-12 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-6 text-gray-400 text-sm">
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg">school</span>
+            <span>&copy; 2026 The Scholarly Path</span>
+        </div>
+        <div class="flex gap-8">
+            <a href="#" class="hover:text-primary transition-colors">About Us</a>
+            <a href="#" class="hover:text-primary transition-colors">Career Pathways</a>
+            <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+        </div>
+    </footer>
 </body>
 </html>
