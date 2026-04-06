@@ -228,8 +228,13 @@
 </div>
 </nav>
 
-<script>
-    const API_BASE_URL = '';
+<script type="module">
+    import { 
+        app, analytics, db, auth, 
+        createUserWithEmailAndPassword, doc, setDoc 
+    } from '../lib/firebase-config.js';
+    console.log("Firebase initialized:", app.name);
+
     let selectedGoal = "Data Scientist"; // default as it's highlighted initially
 
     // Handle Goal Selection Styling
@@ -272,32 +277,32 @@
         }
 
         try {
-            const response = await fetch(`${API_BASE_URL}/register`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name, email, password, goal: selectedGoal })
+            // 1. Create User in Firebase Auth
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+
+            // 2. Store Profile in Firestore
+            await setDoc(doc(db, "users", user.uid), {
+                uid: user.uid,
+                name: name,
+                email: email,
+                goal: selectedGoal,
+                progress: [],
+                createdAt: new Date().toISOString()
             });
 
-            if (!response.ok) {
-                const errorData = await response.json();
-                alert(`Registration Failed: ${errorData.detail || 'Email may already be registered'}`);
-                return;
-            }
+            // 3. Store in localStorage for session consistency
+            localStorage.setItem('userId', user.uid);
+            localStorage.setItem('userName', name);
+            localStorage.setItem('userEmail', email);
+            localStorage.setItem('userGoal', selectedGoal);
 
-            const data = await response.json();
-
-            // Store in localStorage
-            // The API returns the created user dict
-            localStorage.setItem('userId', data.id);
-            localStorage.setItem('userName', data.name);
-            localStorage.setItem('userEmail', data.email);
-            localStorage.setItem('userGoal', data.goal);
-
+            alert("Registration successful! Building your path...");
             window.location.href = '../personalized_roadmap/code.html';
 
         } catch (error) {
             console.error('Registration Error:', error);
-            alert("A network error occurred. Please make sure the backend is running.");
+            alert(`Error: ${error.message}`);
         }
     });
 </script>

@@ -39,8 +39,9 @@ def get_db():
 
 @app.get("/", response_class=HTMLResponse)
 def home():
-    # Serve index.html as the primary landing page
-    index_path = os.path.join(frontend_dir, "index.html")
+    # Serve index.html as the primary landing page from the root
+    root_dir = os.path.dirname(os.path.dirname(__file__))
+    index_path = os.path.join(root_dir, "index.html")
     if os.path.exists(index_path):
         with open(index_path, "r", encoding="utf-8") as f:
             return f.read()

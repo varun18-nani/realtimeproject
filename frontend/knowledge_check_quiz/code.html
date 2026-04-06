@@ -263,16 +263,77 @@
 <button class="fixed right-6 bottom-28 md:bottom-32 bg-primary text-white w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-transform md:hidden">
 <span class="material-symbols-outlined" data-icon="add">add</span>
 </button>
-<script>
-    const API_BASE_URL = '';
-    let quizData = [];
-    let currentScore = 0;
+<script type="module">
+    import { app, analytics, db, auth } from '../lib/firebase-config.js';
+    console.log("Firebase initialized:", app.name);
+
+    function getQuizQuestions(goal) {
+        const goalLower = goal.toLowerCase().trim();
+        
+        if (goalLower.includes("web")) {
+            return [
+                {
+                    "question": "What does HTML stand for?",
+                    "options": ["Hyper Trainer Marking Language", "Hyper Text Markup Language", "Hyper Text Marketing Language"],
+                    "answer": "Hyper Text Markup Language"
+                },
+                {
+                    "question": "Which HTTP status code means 'Not Found'?",
+                    "options": ["200", "404", "500"],
+                    "answer": "404"
+                },
+                {
+                    "question": "Which operator is used for strict equality in JavaScript?",
+                    "options": ["==", "===", "="],
+                    "answer": "==="
+                }
+            ];
+        } else if (goalLower.includes("data") || goalLower.includes("science")) {
+            return [
+                {
+                    "question": "Which Python library is primarily used for data manipulation?",
+                    "options": ["Requests", "Pandas", "Flask"],
+                    "answer": "Pandas"
+                },
+                {
+                    "question": "What does ML stand for?",
+                    "options": ["Machine Language", "Micro Logic", "Machine Learning"],
+                    "answer": "Machine Learning"
+                }
+            ];
+        } else if (goalLower.includes("android") || goalLower.includes("app")) {
+            return [
+                {
+                    "question": "What is the official language for Android development?",
+                    "options": ["Swift", "Kotlin", "C#"],
+                    "answer": "Kotlin"
+                },
+                {
+                    "question": "What file format is used to distribute Android apps?",
+                    "options": [".ipa", ".apk", ".exe"],
+                    "answer": ".apk"
+                }
+            ];
+        }
+        
+        return [
+            {
+                "question": "What is an algorithm?",
+                "options": ["A graphical interface", "A step-by-step procedure for solving a problem", "A database system"],
+                "answer": "A step-by-step procedure for solving a problem"
+            },
+            {
+                "question": "Which language is known as the 'mother of all languages'?",
+                "options": ["C", "Assembly", "Python"],
+                "answer": "C"
+            }
+        ];
+    }
 
     async function loadQuiz() {
         const goal = localStorage.getItem('userGoal') || 'Software Developer';
         try {
-            const response = await fetch(`${API_BASE_URL}/quiz/${encodeURIComponent(goal)}`);
-            quizData = await response.json();
+            const quizData = getQuizQuestions(goal);
             
             const container = document.getElementById('quiz-container');
             container.innerHTML = '';
@@ -280,7 +341,7 @@
             quizData.forEach((q, index) => {
                 let optionsHtml = q.options.map(opt => `
                     <button class="quiz-option w-full text-left bg-surface-container rounded-xl p-4 mt-2 transition-colors hover:bg-primary-fixed hover:text-on-primary-fixed" 
-                            onclick="checkAnswer(this, '${opt}', '${q.answer}')">
+                            onclick="window.checkAnswer(this, '${opt}', '${q.answer}')">
                         ${opt}
                     </button>
                 `).join('');
@@ -301,8 +362,7 @@
         }
     }
 
-    function checkAnswer(btn, selected, correct) {
-        // Disable all siblings
+    window.checkAnswer = function(btn, selected, correct) {
         const parent = btn.parentElement;
         parent.querySelectorAll('.quiz-option').forEach(b => {
             b.disabled = true;
@@ -314,13 +374,9 @@
             }
         });
 
-        // If wrong, highlight red
         if (selected.trim() !== correct.trim()) {
             btn.classList.add('bg-error-container', 'text-on-error-container', 'border-2', 'border-error');
-        } else {
-            currentScore++;
         }
-        
     }
 
     document.addEventListener("DOMContentLoaded", loadQuiz);

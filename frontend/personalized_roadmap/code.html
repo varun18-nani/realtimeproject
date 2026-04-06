@@ -192,31 +192,63 @@
 </a>
 </nav>
 
-<script>
-    const API_BASE_URL = '';
+<script type="module">
+    import { 
+        app, analytics, db, auth, 
+        doc, getDoc, updateDoc, arrayUnion 
+    } from '../lib/firebase-config.js';
+    console.log("Firebase initialized:", app.name);
+
+    function generateRoadmapData(goal) {
+        const goalLower = goal.toLowerCase().trim();
+        let topics = [];
+        
+        if (goalLower.includes("web")) {
+            topics = ["HTML & CSS Basics", "JavaScript Fundamentals", "React Framework", "NodeJS & Express", "Database Integration", "Final Portfolio Project"];
+        } else if (goalLower.includes("data") || goalLower.includes("science")) {
+            topics = ["Python Basics", "Numpy & Pandas", "Data Visualization", "Machine Learning Intro", "Deep Learning Basics", "Final Data Science Project"];
+        } else if (goalLower.includes("android") || goalLower.includes("app")) {
+            topics = ["Java/Kotlin Basics", "OOP Concepts", "Android Studio UI", "Firebase Integration", "REST APIs in Android", "Build a Mobile App"];
+        } else if (goalLower.includes("software") || goalLower.includes("dev")) {
+            topics = ["Programming Fundamentals", "Data Structures", "Algorithms", "Version Control (Git)", "System Design", "Capstone Project"];
+        } else {
+            topics = ["General Programming", "Problem Solving", "Basic Web Tools", "Intro to Databases", "Final Assessment"];
+        }
+            
+        return topics.map((topic, index) => ({
+            day: index + 1,
+            topic: topic,
+            status: "pending"
+        }));
+    }
     
     async function loadRoadmap() {
+        const userId = localStorage.getItem('userId');
         const goal = localStorage.getItem('userGoal') || 'Software Developer';
         document.getElementById('focus-title').innerText = goal + " Path";
 
         try {
-            const response = await fetch(`${API_BASE_URL}/roadmap/${encodeURIComponent(goal)}`);
-            const data = await response.json();
+            // 1. Generate Roadmap locally
+            const schedule = generateRoadmapData(goal);
+            
+            // 2. Fetch completed topics from Firestore
+            let completedTopics = [];
+            if (userId) {
+                const userDoc = await getDoc(doc(db, "users", userId));
+                if (userDoc.exists()) {
+                    completedTopics = userDoc.data().progress || [];
+                }
+            }
             
             const container = document.getElementById('roadmap-container');
             container.innerHTML = ''; // clear
 
-            data.schedule.forEach((item, index) => {
-                let statusBg = "bg-primary";
-                let statusIcon = "pending";
-                let statusLabel = "PENDING";
+            schedule.forEach((item, index) => {
+                const isCompleted = completedTopics.includes(item.topic);
+                let statusBg = isCompleted ? "bg-secondary" : "bg-primary";
+                let statusIcon = isCompleted ? "check_circle" : "pending";
+                let statusLabel = isCompleted ? "COMPLETED" : "PENDING";
                 
-                if(index === 0) {
-                    statusBg = "bg-secondary";
-                    statusIcon = "check_circle";
-                    statusLabel = "COMPLETED";
-                }
-
                 container.innerHTML += `
                     <div class="relative pl-16 group">
                         <div class="absolute left-0 top-2 w-14 h-14 ${statusBg} text-white rounded-full flex items-center justify-center z-10 shadow-md">
@@ -230,31 +262,46 @@
                                 </div>
                                 <span class="material-symbols-outlined text-outline">school</span>
                             </div>
-                            <button onclick="markComplete('${item.topic}')" class="mt-2 flex items-center gap-2 text-sm text-primary font-bold ${index === 0 ? 'hidden' : ''}">
+                            <button onclick="window.markComplete('${item.topic}')" class="mt-2 flex items-center gap-2 text-sm text-primary font-bold ${isCompleted ? 'hidden' : ''}">
                                 Mark as Complete <span class="material-symbols-outlined text-sm">done</span>
                             </button>
                         </div>
                     </div>
                 `;
             });
+
+            // Update Progress Bar
+            const progressPercent = Math.round((completedTopics.length / schedule.length) * 100);
+            updateUIProgress(progressPercent);
             
         } catch (error) {
             console.error('Error loading roadmap:', error);
         }
     }
 
-    async function markComplete(topic) {
-        const userId = localStorage.getItem('userId') || 1;
+    function updateUIProgress(percent) {
+        const bar = document.querySelector('.bg-gradient-to-r');
+        const text = document.querySelector('.text-on-surface-variant.text-sm');
+        if (bar) bar.style.width = `${percent}%`;
+        if (text) text.innerText = `${percent}% Competency achieved`;
+    }
+
+    window.markComplete = async function(topic) {
+        const userId = localStorage.getItem('userId');
+        if (!userId) {
+            alert("Please login first.");
+            return;
+        }
         
         try {
-            const response = await fetch(`${API_BASE_URL}/progress`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ user_id: parseInt(userId), course: topic, progress: 100 })
+            await updateDoc(doc(db, "users", userId), {
+                progress: arrayUnion(topic)
             });
-            alert("Progress saved!");
+            alert(`Progress saved: ${topic}`);
+            loadRoadmap(); // Refresh UI
         } catch (error) {
             console.error('Progress update error:', error);
+            alert("Error saving progress.");
         }
     }
 

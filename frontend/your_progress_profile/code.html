@@ -288,38 +288,52 @@
 <span class="Lexend label-md font-medium text-[10px]">Profile</span>
 </a>
 </nav>
-<script>
-    const API_BASE_URL = '';
+<script type="module">
+    import { 
+        app, analytics, db, auth, 
+        doc, getDoc, signOut 
+    } from '../lib/firebase-config.js';
+    console.log("Firebase initialized:", app.name);
 
     async function loadProfile() {
         const userId = localStorage.getItem('userId');
-        const userName = localStorage.getItem('userName');
-        const userEmail = localStorage.getItem('userEmail');
-        const userGoal = localStorage.getItem('userGoal');
 
-        // Authentication Check: Redirect to login if no session data found
+        // Authentication Check
         if (!userId) {
             console.warn("No user credentials found. Redirecting to login...");
             window.location.href = '../login_integrated_journey/code.html';
             return;
         }
-        
-        // Populate Identification Section
-        document.getElementById('profile-name').innerText = userName || 'N/A';
-        document.getElementById('profile-email').innerText = userEmail || 'N/A';
-        document.getElementById('profile-user-id').innerText = userId;
-        document.getElementById('profile-goal').innerText = userGoal || 'Career Unset';
 
         try {
-            const response = await fetch(`${API_BASE_URL}/progress/${userId}`);
-            const data = await response.json(); // returns array of progress dicts
+            // 1. Fetch User Profile from Firestore
+            const userDoc = await getDoc(doc(db, "users", userId));
+            
+            if (!userDoc.exists()) {
+                alert("User profile not found.");
+                return;
+            }
 
-            // Calculate overall percentage based on topics completed
-            const totalModules = 6; 
-            let currentScore = Math.min(Math.round((data.length / totalModules) * 100), 100);
+            const userData = userDoc.data();
+            
+            // Populate Identification Section
+            document.getElementById('profile-name').innerText = userData.name || 'User';
+            document.getElementById('profile-email').innerText = userData.email || 'N/A';
+            document.getElementById('profile-user-id').innerText = userId.substring(0, 8) + "...";
+            document.getElementById('profile-goal').innerText = userData.goal || 'Career Unset';
+
+            // Calculate overall percentage
+            const completedTopics = userData.progress || [];
+            const totalModules = 6; // Based on roadmap logic
+            let currentScore = Math.min(Math.round((completedTopics.length / totalModules) * 100), 100);
             
             document.getElementById('profile-status').innerHTML = `${currentScore}<span class="text-2xl text-on-surface-variant font-medium">%</span>`;
             document.getElementById('profile-bar').style.width = `${currentScore}%`;
+
+            // Sync localStorage just in case
+            localStorage.setItem('userName', userData.name);
+            localStorage.setItem('userEmail', userData.email);
+            localStorage.setItem('userGoal', userData.goal);
 
         } catch (error) {
             console.error('Failed to load progress', error);
@@ -327,9 +341,16 @@
     }
 
     // Logout Functionality: Clear credentials and redirect
-    document.getElementById('logout-btn').addEventListener('click', () => {
-        localStorage.clear();
-        window.location.href = '../login_integrated_journey/code.html';
+    document.getElementById('logout-btn').addEventListener('click', async () => {
+        try {
+            await signOut(auth);
+            localStorage.clear();
+            window.location.href = '../login_integrated_journey/code.html';
+        } catch (error) {
+            console.error("Logout failed", error);
+            localStorage.clear();
+            window.location.href = '../login_integrated_journey/code.html';
+        }
     });
 
     document.addEventListener("DOMContentLoaded", loadProfile);
