@@ -94,15 +94,17 @@
 <!-- TopAppBar -->
 <header class="bg-[#f8f9fa] dark:bg-slate-900 flex justify-between items-center px-6 py-4 w-full h-16 sticky top-0 z-40">
 <div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-[#2b5ab5] dark:text-blue-400" data-icon="auto_stories">auto_stories</span>
-<h1 class="Manrope display-sm font-bold text-[#191c1d] dark:text-white text-xl tracking-tight">The Scholarly Path</h1>
+<span class="material-symbols-outlined text-[#2b5ab5] dark:text-blue-400">auto_stories</span>
+<a href="../../index.html" class="hover:opacity-80 transition-opacity">
+    <h1 class="Manrope display-sm font-bold text-[#191c1d] dark:text-white text-xl tracking-tight">The Scholarly Path</h1>
+</a>
 </div>
 <nav class="hidden md:flex items-center gap-8">
-<a class="text-[#2b5ab5] dark:text-blue-300 font-bold hover:bg-[#f3f4f5] dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-xl" href="#">Home</a>
-<a class="text-[#191c1d] dark:text-slate-400 hover:bg-[#f3f4f5] dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-xl" href="#">Roadmap</a>
-<a class="text-[#191c1d] dark:text-slate-400 hover:bg-[#f3f4f5] dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-xl" href="#">Schedule</a>
-<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden">
-<img class="w-full h-full object-cover" data-alt="Portrait of a young male student smiling with warm natural lighting and blurred library background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVbS9FtcfD9LiCbPMf5If2zXomA3p3t4-vYgiEDp2lxwUCDo7Qdo6jIpEw0enJDh-me8-yM4Fsot9zvLU8NK3UJeAoCX_yL4kh1PePTGI2jJxYO8O5hAHi3E6g7gWq4Ewx-KdIP3t-g0qeDNF5hpqy-BKXO9_xLV6Acisatay0Ln6vPpFze-Koi8-Kxu0JSen0UG2psMbIBSZ7LTakTS-X5rc6E5Rt0xbcws6uKanxQRqODUWkNOyjAtVvXMEWbY2N91MhxD4MJVE"/>
+<a class="text-[#2b5ab5] dark:text-blue-300 font-bold hover:bg-[#f3f4f5] dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-xl" href="../home_latest_updates/code.html">Home</a>
+<a class="text-[#191c1d] dark:text-slate-400 hover:bg-[#f3f4f5] dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-xl" href="../personalized_roadmap/code.html">Roadmap</a>
+<a class="text-[#191c1d] dark:text-slate-400 hover:bg-[#f3f4f5] dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-xl" href="../your_study_schedule/code.html">Schedule</a>
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden cursor-pointer" onclick="window.location.href='../your_progress_profile/code.html'">
+<img id="user-avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVbS9FtcfD9LiCbPMf5If2zXomA3p3t4-vYgiEDp2lxwUCDo7Qdo6jIpEw0enJDh-me8-yM4Fsot9zvLU8NK3UJeAoCX_yL4kh1PePTGI2jJxYO8O5hAHi3E6g7gWq4Ewx-KdIP3t-g0qeDNF5hpqy-BKXO9_xLV6Acisatay0Ln6vPpFze-Koi8-Kxu0JSen0UG2psMbIBSZ7LTakTS-X5rc6E5Rt0xbcws6uKanxQRqODUWkNOyjAtVvXMEWbY2N91MhxD4MJVE"/>
 </div>
 </nav>
 </header>
@@ -112,7 +114,7 @@
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
 <div>
 <p class="text-secondary font-semibold tracking-wide uppercase text-sm mb-2 font-label">Your Journey Awaits</p>
-<h2 class="text-4xl md:text-5xl font-extrabold text-on-surface leading-tight">Welcome back, Alex</h2>
+<h2 class="text-4xl md:text-5xl font-extrabold text-on-surface leading-tight">Welcome back, <span id="user-name-greeting">Alex</span></h2>
 </div>
 <div class="bg-surface-container-low px-6 py-3 rounded-xl flex items-center gap-4">
 <div class="text-right">
@@ -130,11 +132,11 @@
 <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-20 -mt-20 blur-3xl group-hover:scale-110 transition-transform duration-700"></div>
 <div class="relative z-10">
 <span class="px-4 py-1.5 bg-white/20 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-widest">Active Module</span>
-<h3 class="text-3xl font-bold mt-4 mb-2">Advanced Cloud Architectures</h3>
-<p class="text-white/80 max-w-md font-light">Continue where you left off: Load Balancing &amp; High Availability Strategies in AWS.</p>
+<h3 id="active-goal-title" class="text-3xl font-bold mt-4 mb-2">Cloud Architecture</h3>
+<p class="text-white/80 max-w-md font-light">Continue where you left off: Mastering your personalized roadmap milestones.</p>
 </div>
 <div class="relative z-10 flex flex-wrap items-center gap-6">
-<button class="bg-white text-primary px-8 py-4 rounded-xl font-bold text-lg hover:scale-[0.98] transition-transform active:scale-95">Resume Learning</button>
+<button onclick="window.location.href='../personalized_roadmap/code.html'" class="bg-white text-primary px-8 py-4 rounded-xl font-bold text-lg hover:scale-[0.98] transition-transform active:scale-95">Resume Learning</button>
 <div class="flex flex-col">
 <span class="text-xs text-white/60">Module Progress</span>
 <div class="w-48 h-2 bg-white/20 rounded-full mt-2 overflow-hidden">

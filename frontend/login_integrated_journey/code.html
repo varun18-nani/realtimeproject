@@ -278,11 +278,52 @@
 
     <script type="module">
         import { 
-            app, analytics, db, auth, 
-            signInWithEmailAndPassword, doc, getDoc 
+            app, analytics, db, auth, googleProvider,
+            signInWithEmailAndPassword, signInWithPopup, doc, getDoc, setDoc 
         } from '../lib/firebase-config.js';
         console.log("Firebase initialized:", app.name);
 
+        // --- Google Login ---
+        document.getElementById('google-login-btn').addEventListener('click', async () => {
+            try {
+                const result = await signInWithPopup(auth, googleProvider);
+                const user = result.user;
+
+                // Check if user already exists in Firestore
+                const userDoc = await getDoc(doc(db, "users", user.uid));
+                
+                if (!userDoc.exists()) {
+                    // Create basic profile if they are new via Google
+                    await setDoc(doc(db, "users", user.uid), {
+                        uid: user.uid,
+                        name: user.displayName || 'Google User',
+                        email: user.email,
+                        goal: '', // Let them select later
+                        progress: [],
+                        createdAt: new Date().toISOString()
+                    });
+                }
+
+                const userData = userDoc.exists() ? userDoc.data() : { name: user.displayName, goal: '' };
+
+                // Session storage
+                localStorage.setItem('userId', user.uid);
+                localStorage.setItem('userName', userData.name || 'Google User');
+                localStorage.setItem('userEmail', user.email);
+                localStorage.setItem('userGoal', userData.goal || '');
+
+                if (userData.goal) {
+                    window.location.href = '../home_latest_updates/code.html';
+                } else {
+                    window.location.href = '../onboarding_goal_selection/code.html';
+                }
+            } catch (error) {
+                console.error("Google Login Error:", error);
+                alert(`Google Sign-In failed: ${error.message}`);
+            }
+        });
+
+        // --- Email Login ---
         document.getElementById('login-btn').addEventListener('click', async () => {
             const email = document.getElementById('login-email').value;
             const password = document.getElementById('login-password').value;
@@ -293,33 +334,26 @@
             }
 
             try {
-                // 1. Sign In with Firebase Auth
                 const userCredential = await signInWithEmailAndPassword(auth, email, password);
                 const user = userCredential.user;
-
-                // 2. Fetch User Profile from Firestore to get the Goal
                 const userDoc = await getDoc(doc(db, "users", user.uid));
                 
                 if (!userDoc.exists()) {
-                    alert("User profile not found in database.");
+                    alert("User profile not found.");
                     return;
                 }
 
                 const userData = userDoc.data();
-
-                // 3. Save Session Data to localStorage
                 localStorage.setItem('userId', user.uid);
                 localStorage.setItem('userName', userData.name || 'User');
                 localStorage.setItem('userEmail', user.email);
                 localStorage.setItem('userGoal', userData.goal || '');
 
-                // 4. Redirect based on whether they have a goal
                 if (userData.goal) {
-                    window.location.href = '../personalized_roadmap/code.html';
+                    window.location.href = '../home_latest_updates/code.html';
                 } else {
                     window.location.href = '../onboarding_goal_selection/code.html';
                 }
-
             } catch (error) {
                 console.error('Login Error:', error);
                 alert(`Login Failed: ${error.message}`);

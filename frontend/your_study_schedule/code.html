@@ -304,32 +304,60 @@
 </div>
 </div>
 </div>
-</main>
+</main><header class="flex justify-between items-center px-6 py-4 w-full h-16 bg-[#f8f9fa] dark:bg-slate-900 docked full-width top-0 z-40">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#2b5ab5] dark:text-blue-400">auto_stories</span>
+<a href="../../index.html" class="hover:opacity-80 transition-opacity">
+    <h1 class="Manrope display-sm font-bold text-[#191c1d] dark:text-white tracking-tight">The Scholarly Path</h1>
+</a>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<nav class="flex gap-6 items-center">
+<a class="text-[#191c1d] dark:text-slate-400 font-medium hover:bg-[#f3f4f5] dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-xl" href="../home_latest_updates/code.html">Home</a>
+<a class="text-[#191c1d] dark:text-slate-400 font-medium hover:bg-[#f3f4f5] dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-xl" href="../personalized_roadmap/code.html">Roadmap</a>
+<a class="text-[#2b5ab5] dark:text-blue-300 font-bold px-3 py-2 rounded-xl" href="../your_study_schedule/code.html">Schedule</a>
+<a class="text-[#191c1d] dark:text-slate-400 font-medium hover:bg-[#f3f4f5] dark:hover:bg-slate-800 transition-colors px-3 py-2 rounded-xl" href="../knowledge_check_quiz/code.html">Quiz</a>
+</nav>
+<button onclick="window.location.href='../your_progress_profile/code.html'" class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">person</span>
+</button>
+</div>
+</header>
+
 <!-- BottomNavBar -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#ffffffcc] dark:bg-slate-900/80 backdrop-blur-xl rounded-t-3xl shadow-[0_-12px_40px_rgba(25,28,29,0.06)] md:hidden">
-<a class="flex flex-col items-center justify-center text-[#191c1d]/60 dark:text-slate-400 p-3 hover:bg-[#f3f4f5] dark:hover:bg-slate-800 rounded-2xl" href="#">
-<span class="material-symbols-outlined" data-icon="home">home</span>
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#ffffffcc] dark:bg-slate-900/80 backdrop-blur-xl rounded-t-3xl shadow-[0_-12px_40px_rgba(25,28,29,0.06)] md:hidden border-t border-gray-100">
+<a class="flex flex-col items-center justify-center text-[#191c1d]/60 dark:text-slate-400 p-3 hover:bg-[#f3f4f5] dark:hover:bg-slate-800 rounded-2xl" href="../home_latest_updates/code.html">
+<span class="material-symbols-outlined">home</span>
 <span class="Lexend label-md font-medium text-[10px] mt-1">Home</span>
 </a>
-<a class="flex flex-col items-center justify-center text-[#191c1d]/60 dark:text-slate-400 p-3 hover:bg-[#f3f4f5] dark:hover:bg-slate-800 rounded-2xl" href="#">
-<span class="material-symbols-outlined" data-icon="map">map</span>
+<a class="flex flex-col items-center justify-center text-[#191c1d]/60 dark:text-slate-400 p-3 hover:bg-[#f3f4f5] dark:hover:bg-slate-800 rounded-2xl" href="../personalized_roadmap/code.html">
+<span class="material-symbols-outlined">map</span>
 <span class="Lexend label-md font-medium text-[10px] mt-1">Roadmap</span>
 </a>
-<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#2b5ab5] to-[#2b5ab5]/80 text-white rounded-2xl p-3 scale-[0.95] shadow-lg" href="#">
-<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#2b5ab5] to-[#2b5ab5]/80 text-white rounded-2xl p-3 scale-[0.95] shadow-lg" href="../your_study_schedule/code.html">
+<span class="material-symbols-outlined">calendar_today</span>
 <span class="Lexend label-md font-medium text-[10px] mt-1">Schedule</span>
 </a>
-<a class="flex flex-col items-center justify-center text-[#191c1d]/60 dark:text-slate-400 p-3 hover:bg-[#f3f4f5] dark:hover:bg-slate-800 rounded-2xl" href="#">
-<span class="material-symbols-outlined" data-icon="quiz">quiz</span>
+<a class="flex flex-col items-center justify-center text-[#191c1d]/60 dark:text-slate-400 p-3 hover:bg-[#f3f4f5] dark:hover:bg-slate-800 rounded-2xl" href="../knowledge_check_quiz/code.html">
+<span class="material-symbols-outlined">quiz</span>
 <span class="Lexend label-md font-medium text-[10px] mt-1">Quiz</span>
 </a>
-<a class="flex flex-col items-center justify-center text-[#191c1d]/60 dark:text-slate-400 p-3 hover:bg-[#f3f4f5] dark:hover:bg-slate-800 rounded-2xl" href="#">
-<span class="material-symbols-outlined" data-icon="person">person</span>
+<a class="flex flex-col items-center justify-center text-[#191c1d]/60 dark:text-slate-400 p-3 hover:bg-[#f3f4f5] dark:hover:bg-slate-800 rounded-2xl" href="../your_progress_profile/code.html">
+<span class="material-symbols-outlined">person</span>
 <span class="Lexend label-md font-medium text-[10px] mt-1">Profile</span>
 </a>
 </nav>
-<!-- Floating Action Button (Optional contextual use) -->
-<button class="fixed right-6 bottom-24 md:bottom-12 w-14 h-14 bg-primary text-white rounded-2xl shadow-xl flex items-center justify-center transition-transform active:scale-95 z-40">
-<span class="material-symbols-outlined" data-icon="add">add</span>
-</button>
+
+<script type="module">
+    import { app, db, auth, onAuthStateChanged, doc, getDoc } from '../lib/firebase-config.js';
+
+    onAuthStateChanged(auth, async (user) => {
+        if (!user) {
+            window.location.href = '../login_integrated_journey/code.html';
+        } else {
+            console.log("User active on Schedule page:", user.email);
+        }
+    });
+
+</script>
 </body></html>
