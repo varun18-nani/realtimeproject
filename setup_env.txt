@@ -1,0 +1,21 @@
+# Local Python Setup Guide
+
+If you see "Python was not found" when trying to run your server, follow these steps:
+
+### 🛠️ For Windows:
+1.  **Check Installation**: Download and install Python from [python.org](https://www.python.org/downloads/windows/).
+2.  **Enable App Execution Alias**:
+    - Go to **Settings** > **Apps** > **Advanced app settings** > **App execution aliases**.
+    - Toggle **OFF** all aliases related to "python.exe" and "python3.exe".
+3.  **Add to PATH**:
+    - Open the Start Menu and search for **"Edit the system environment variables"**.
+    - Click **Environment Variables**.
+    - Under **System variables**, select **Path** and click **Edit**.
+    - Add the path to your Python installation (e.g., `C:\Python312` and `C:\Python312\Scripts`).
+4.  **Restart your Terminal** for the changes to take effect.
+
+---
+
+### 🚀 Alternative: Use GitHub Pages (Fastest)
+The application doesn't *require* a local backend. You can run it directly via the GitHub link I provided!
+[https://varun18-nani.github.io/realtimeproject/](https://varun18-nani.github.io/realtimeproject/)
