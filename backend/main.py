@@ -1,4 +1,6 @@
 from fastapi import FastAPI, HTTPException, Depends
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from database import engine, SessionLocal
@@ -6,11 +8,15 @@ import models
 import schemas
 import auth
 import progress
+import os
 
 from roadmap_ai import generate_roadmap
 from quiz_engine import get_questions
 
-app = FastAPI(title="Student Career Roadmap API")
+app = FastAPI(title="Student Career Roadmap Platform")
+
+# Get absolute path for frontend directory
+frontend_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "frontend")
 
 app.add_middleware(
     CORSMiddleware,
@@ -31,9 +37,17 @@ def get_db():
     finally:
         db.close()
 
-@app.get("/")
+@app.get("/", response_class=HTMLResponse)
 def home():
-    return {"message": "Career Roadmap Platform Backend Running"}
+    # Serve index.html as the primary landing page
+    index_path = os.path.join(frontend_dir, "index.html")
+    if os.path.exists(index_path):
+        with open(index_path, "r", encoding="utf-8") as f:
+            return f.read()
+    return {"message": "Career Roadmap Platform Running (Missing index.html)"}
+
+# Mount the entire frontend directory for static assets (CSS, JS, images, etc.)
+app.mount("/", StaticFiles(directory=frontend_dir), name="frontend")
 
 # ---------------- AUTHENTICATION ----------------
 @app.post("/register")

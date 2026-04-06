@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Login - The Scholarly Path</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Lexend:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Login - The Scholarly Path</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Lexend:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -78,10 +84,11 @@
             },
         }
     </script>
-<style>
+    <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
         .glass-effect {
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(24px);
@@ -89,178 +96,232 @@
         }
 
         @keyframes float-3d {
-            0% { transform: translateZ(0) translateY(0) rotateX(0); opacity: 0; }
-            20% { opacity: 1; }
-            80% { opacity: 1; }
-            100% { transform: translateZ(50px) translateY(-20px) rotateX(5deg); opacity: 0; }
+            0% {
+                transform: translateZ(0) translateY(0) rotateX(0);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateZ(50px) translateY(-20px) rotateX(5deg);
+                opacity: 0;
+            }
         }
 
         @keyframes flow-in {
-            0% { transform: translateX(-50px) translateZ(-20px); opacity: 0; }
-            100% { transform: translateX(0) translateZ(0); opacity: 1; }
+            0% {
+                transform: translateX(-50px) translateZ(-20px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0) translateZ(0);
+                opacity: 1;
+            }
         }
 
         .perspective-1000 {
             perspective: 1000px;
         }
 
-        .animate-float-1 { animation: float-3d 6s ease-in-out infinite; }
-        .animate-float-2 { animation: float-3d 6s ease-in-out infinite 2s; }
-        .animate-float-3 { animation: float-3d 6s ease-in-out infinite 4s; }
-        .animate-image-3d { animation: flow-in 1.5s cubic-bezier(0.23, 1, 0.32, 1) forwards; }
+        .animate-float-1 {
+            animation: float-3d 6s ease-in-out infinite;
+        }
+
+        .animate-float-2 {
+            animation: float-3d 6s ease-in-out infinite 2s;
+        }
+
+        .animate-float-3 {
+            animation: float-3d 6s ease-in-out infinite 4s;
+        }
+
+        .animate-image-3d {
+            animation: flow-in 1.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+        }
     </style>
-<style>
+    <style>
         body {
             min-height: max(884px, 100dvh);
         }
     </style>
 </head>
-<body class="bg-surface font-body text-on-surface antialiased min-h-screen flex flex-col items-center overflow-x-hidden">
-<main class="w-full max-w-md px-6 py-8 flex flex-col min-h-screen relative z-10">
-<!-- 3D Animation Header Section -->
-<div class="relative w-full aspect-square mb-8 perspective-1000">
-<!-- Depth Layers Background -->
-<div class="absolute inset-0 bg-primary/5 rounded-full scale-90 blur-3xl -z-10 animate-pulse"></div>
-<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-<!-- Floating Quotes -->
-<div class="absolute -top-6 left-4 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full shadow-lg border border-primary/10 text-sm font-bold text-primary animate-float-1 whitespace-nowrap z-20">
-                ✨ Unlocking Potential
+
+<body
+    class="bg-surface font-body text-on-surface antialiased min-h-screen flex flex-col items-center overflow-x-hidden">
+    <main class="w-full max-w-md px-6 py-8 flex flex-col min-h-screen relative z-10">
+        <!-- 3D Animation Header Section -->
+        <div class="relative w-full aspect-square mb-8 perspective-1000">
+            <!-- Depth Layers Background -->
+            <div class="absolute inset-0 bg-primary/5 rounded-full scale-90 blur-3xl -z-10 animate-pulse"></div>
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <!-- Floating Quotes -->
+                <div
+                    class="absolute -top-6 left-4 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full shadow-lg border border-primary/10 text-sm font-bold text-primary animate-float-1 whitespace-nowrap z-20">
+                    ✨ Unlocking Potential
+                </div>
+                <div
+                    class="absolute top-1/2 -right-6 translate-y-[-50%] bg-white/90 backdrop-blur-md px-4 py-2 rounded-full shadow-lg border border-secondary/10 text-sm font-bold text-secondary animate-float-2 whitespace-nowrap z-20">
+                    🚀 Your Path Starts Here
+                </div>
+                <div
+                    class="absolute -bottom-4 left-0 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full shadow-lg border border-tertiary/10 text-sm font-bold text-tertiary animate-float-3 whitespace-nowrap z-20">
+                    🎓 From Beginner to Pro
+                </div>
             </div>
-<div class="absolute top-1/2 -right-6 translate-y-[-50%] bg-white/90 backdrop-blur-md px-4 py-2 rounded-full shadow-lg border border-secondary/10 text-sm font-bold text-secondary animate-float-2 whitespace-nowrap z-20">
-                🚀 Your Path Starts Here
+            <!-- Main Image with 3D Entrance -->
+            <div class="relative w-full h-full flex items-center justify-center animate-image-3d">
+                <div class="relative group">
+                    <div
+                        class="absolute -inset-4 bg-gradient-to-tr from-primary/10 to-transparent blur-xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <img alt="A young student focused on a book"
+                        class="relative z-10 w-full h-full drop-shadow-2xl rounded-2xl object-cover w-full h-full shadow-xl"
+                        src="https://lh3.googleusercontent.com/aida/ADBb0uiwUBNU5hpecRnouTNYWUpwyQ1aNYCne8gBlSNHUfe4aEvxoe73HvozcPV4r858cLhgY7uJXLk5ghcQjaLqli6QIUyQN9Ce5Tb1RA6gfgiKkkewZKBvRyT3eodonX4p-znQxsS55mZ6BTKnfpfqyyrjXfesXU304s79q4WSMlyMvpmjK7hA00rg7oamj04Vs0ADiR9J8hSYIaM1BN-r8IgWsDYAk0CyBdKcY_xykInsthyjsZxdam6qK5o2LKF3dp7yvvDsoJs7Ew" />
+                </div>
             </div>
-<div class="absolute -bottom-4 left-0 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full shadow-lg border border-tertiary/10 text-sm font-bold text-tertiary animate-float-3 whitespace-nowrap z-20">
-                🎓 From Beginner to Pro
-            </div>
-</div>
-<!-- Main Image with 3D Entrance -->
-<div class="relative w-full h-full flex items-center justify-center animate-image-3d">
-<div class="relative group">
-<div class="absolute -inset-4 bg-gradient-to-tr from-primary/10 to-transparent blur-xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity"></div>
-<img alt="A young student focused on a book" class="relative z-10 w-full h-full drop-shadow-2xl rounded-2xl object-cover w-full h-full shadow-xl" src="https://lh3.googleusercontent.com/aida/ADBb0uiwUBNU5hpecRnouTNYWUpwyQ1aNYCne8gBlSNHUfe4aEvxoe73HvozcPV4r858cLhgY7uJXLk5ghcQjaLqli6QIUyQN9Ce5Tb1RA6gfgiKkkewZKBvRyT3eodonX4p-znQxsS55mZ6BTKnfpfqyyrjXfesXU304s79q4WSMlyMvpmjK7hA00rg7oamj04Vs0ADiR9J8hSYIaM1BN-r8IgWsDYAk0CyBdKcY_xykInsthyjsZxdam6qK5o2LKF3dp7yvvDsoJs7Ew"/>
-</div>
-</div>
-</div>
-<p class="text-center font-body text-secondary font-medium italic mb-8 text-sm opacity-80 animate-pulse mt-4">
-        "Don't be like me"
-    </p>
-<!-- Typography Branding Section -->
-<div class="space-y-2 mb-10 text-center">
-<h1 class="font-headline text-4xl font-extrabold tracking-tight text-on-surface">
-            Find Your Path.
-        </h1>
-<p class="font-body text-on-surface-variant text-lg leading-relaxed max-w-[280px] mx-auto">
-            You don't need to have all the answers. Just the first step.
+        </div>
+        <p class="text-center font-body text-secondary font-medium italic mb-8 text-sm opacity-80 animate-pulse mt-4">
+            "Don't be like me"
         </p>
-</div>
-<!-- Form Section -->
-<div class="space-y-6 w-full">
-<div class="space-y-4">
-<!-- Email Input -->
-<div class="relative group">
-<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-outline">
-<span class="material-symbols-outlined text-xl">mail</span>
-</div>
-<input id="login-email" class="w-full bg-surface-container-highest border-none rounded-xl py-4 pl-12 pr-4 focus:ring-2 focus:ring-primary/20 text-on-surface placeholder:text-outline-variant font-body transition-shadow" placeholder="Email Address" type="email"/>
-</div>
-<!-- Password Input -->
-<div class="relative group">
-<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-outline">
-<span class="material-symbols-outlined text-xl">lock</span>
-</div>
-<input id="login-password" class="w-full bg-surface-container-highest border-none rounded-xl py-4 pl-12 pr-12 focus:ring-2 focus:ring-primary/20 text-on-surface placeholder:text-outline-variant font-body transition-shadow" placeholder="Password" type="password"/>
-<button class="absolute inset-y-0 right-4 flex items-center text-outline">
-<span class="material-symbols-outlined text-xl">visibility</span>
-</button>
-</div>
-</div>
-<!-- Action Links -->
-<div class="flex justify-end">
-<a class="text-primary font-medium text-sm hover:underline decoration-surface-tint" href="#">
-                Forgot Password?
-            </a>
-</div>
-<!-- Primary Action -->
-<button id="login-btn" class="w-full py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold text-lg rounded-xl shadow-[0_12px_40px_rgba(43,90,181,0.2)] active:scale-[0.98] transition-all hover:brightness-110">
-            Sign In
-        </button>
-<!-- Social Login Divider -->
-<div class="flex items-center gap-4 py-2">
-<div class="flex-1 h-[1px] bg-outline-variant opacity-20"></div>
-<span class="text-on-surface-variant text-xs font-label uppercase tracking-widest">Or continue with</span>
-<div class="flex-1 h-[1px] bg-outline-variant opacity-20"></div>
-</div>
-<!-- Social Buttons -->
-<div class="grid grid-cols-2 gap-4">
-<button class="flex items-center justify-center gap-2 py-3 bg-surface-container-low rounded-xl hover:bg-surface-container-high transition-colors">
-<img alt="Google" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiR9yJHOGZO170k38sPHDjvZa0mgXcFSOzwFicF_o1ctNcpOJSdBg1dZ6TXn5jElzucTH2uKRB6X_kQO2Dy4pZZCzT0QjHXS-4ieWemZgD4Z04QJtZlxGV3HKDgMNa9R2UHfs9U7TLitEEQC47EKsQ_5dQRYHG1Yn7tfaYQnOKeFXa0BGwdOFwqBk9w9MsGOmshZ4xgsolMAe_Ju9ohk4mNbZen2BHajdXYRNiDo7wvseVBM3IApfncpFsFxoi6CX7ijPYF6Qmr7E"/>
-<span class="text-sm font-medium">Google</span>
-</button>
-<button class="flex items-center justify-center gap-2 py-3 bg-surface-container-low rounded-xl hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined text-xl text-on-background" style="font-variation-settings: 'FILL' 1;">ios</span>
-<span class="text-sm font-medium">Apple</span>
-</button>
-</div>
-</div>
-<!-- Footer Section -->
-<div class="mt-auto pt-8 pb-4 text-center">
-<p class="text-on-surface-variant font-body">
-            New here? 
-            <a class="text-primary font-bold hover:underline ml-1" href="../onboarding_goal_selection/code.html">
-                Create an account
-            </a>
-</p>
-</div>
-</main>
-<!-- Background Decorative Gradients -->
-<div class="fixed top-[-10%] right-[-20%] w-[80%] h-[40%] bg-primary-fixed/10 rounded-full blur-[100px] -z-10"></div>
-<div class="fixed bottom-[-5%] left-[-10%] w-[60%] h-[30%] bg-secondary-fixed/10 rounded-full blur-[80px] -z-10"></div>
-<div class="fixed top-[20%] left-[-20%] w-[40%] h-[40%] bg-tertiary-fixed/5 rounded-full blur-[120px] -z-10"></div>
+        <!-- Typography Branding Section -->
+        <div class="space-y-2 mb-10 text-center">
+            <h1 class="font-headline text-4xl font-extrabold tracking-tight text-on-surface">
+                Find Your Path.
+            </h1>
+            <p class="font-body text-on-surface-variant text-lg leading-relaxed max-w-[280px] mx-auto">
+                You don't need to have all the answers. Just the first step.
+            </p>
+        </div>
+        <!-- Form Section -->
+        <div class="space-y-6 w-full">
+            <div class="space-y-4">
+                <!-- Email Input -->
+                <div class="relative group">
+                    <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-outline">
+                        <span class="material-symbols-outlined text-xl">mail</span>
+                    </div>
+                    <input id="login-email"
+                        class="w-full bg-surface-container-highest border-none rounded-xl py-4 pl-12 pr-4 focus:ring-2 focus:ring-primary/20 text-on-surface placeholder:text-outline-variant font-body transition-shadow"
+                        placeholder="Email Address" type="email" />
+                </div>
+                <!-- Password Input -->
+                <div class="relative group">
+                    <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-outline">
+                        <span class="material-symbols-outlined text-xl">lock</span>
+                    </div>
+                    <input id="login-password"
+                        class="w-full bg-surface-container-highest border-none rounded-xl py-4 pl-12 pr-12 focus:ring-2 focus:ring-primary/20 text-on-surface placeholder:text-outline-variant font-body transition-shadow"
+                        placeholder="Password" type="password" />
+                    <button class="absolute inset-y-0 right-4 flex items-center text-outline">
+                        <span class="material-symbols-outlined text-xl">visibility</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Action Links -->
+            <div class="flex justify-end">
+                <a class="text-primary font-medium text-sm hover:underline decoration-surface-tint" href="#">
+                    Forgot Password?
+                </a>
+            </div>
+            <!-- Primary Action -->
+            <button id="login-btn"
+                class="w-full py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold text-lg rounded-xl shadow-[0_12px_40px_rgba(43,90,181,0.2)] active:scale-[0.98] transition-all hover:brightness-110">
+                Sign In
+            </button>
+            <!-- Social Login Divider -->
+            <div class="flex items-center gap-4 py-2">
+                <div class="flex-1 h-[1px] bg-outline-variant opacity-20"></div>
+                <span class="text-on-surface-variant text-xs font-label uppercase tracking-widest">Or continue
+                    with</span>
+                <div class="flex-1 h-[1px] bg-outline-variant opacity-20"></div>
+            </div>
+            <!-- Social Buttons -->
+            <div class="grid grid-cols-2 gap-4">
+                <button
+                    class="flex items-center justify-center gap-2 py-3 bg-surface-container-low rounded-xl hover:bg-surface-container-high transition-colors">
+                    <img alt="Google" class="w-5 h-5"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiR9yJHOGZO170k38sPHDjvZa0mgXcFSOzwFicF_o1ctNcpOJSdBg1dZ6TXn5jElzucTH2uKRB6X_kQO2Dy4pZZCzT0QjHXS-4ieWemZgD4Z04QJtZlxGV3HKDgMNa9R2UHfs9U7TLitEEQC47EKsQ_5dQRYHG1Yn7tfaYQnOKeFXa0BGwdOFwqBk9w9MsGOmshZ4xgsolMAe_Ju9ohk4mNbZen2BHajdXYRNiDo7wvseVBM3IApfncpFsFxoi6CX7ijPYF6Qmr7E" />
+                    <span class="text-sm font-medium">Google</span>
+                </button>
+                <button
+                    class="flex items-center justify-center gap-2 py-3 bg-surface-container-low rounded-xl hover:bg-surface-container-high transition-colors">
+                    <span class="material-symbols-outlined text-xl text-on-background"
+                        style="font-variation-settings: 'FILL' 1;">ios</span>
+                    <span class="text-sm font-medium">Apple</span>
+                </button>
+            </div>
+        </div>
+        <!-- Footer Section -->
+        <div class="mt-auto pt-8 pb-4 text-center">
+            <p class="text-on-surface-variant font-body">
+                New here?
+                <a class="text-primary font-bold hover:underline ml-1" href="../onboarding_goal_selection/code.html">
+                    Create an account
+                </a>
+            </p>
+        </div>
+    </main>
+    <!-- Background Decorative Gradients -->
+    <div class="fixed top-[-10%] right-[-20%] w-[80%] h-[40%] bg-primary-fixed/10 rounded-full blur-[100px] -z-10">
+    </div>
+    <div class="fixed bottom-[-5%] left-[-10%] w-[60%] h-[30%] bg-secondary-fixed/10 rounded-full blur-[80px] -z-10">
+    </div>
+    <div class="fixed top-[20%] left-[-20%] w-[40%] h-[40%] bg-tertiary-fixed/5 rounded-full blur-[120px] -z-10"></div>
 
-<script>
-    const API_BASE_URL = 'http://127.0.0.1:8000';
+    <script>
+        const API_BASE_URL = 'http://127.0.0.1:8000';
 
-    document.getElementById('login-btn').addEventListener('click', async () => {
-        const email = document.getElementById('login-email').value;
-        const password = document.getElementById('login-password').value;
+        document.getElementById('login-btn').addEventListener('click', async () => {
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
 
-        if (!email || !password) {
-            alert('Please enter both email and password.');
-            return;
-        }
-
-        try {
-            const response = await fetch(`${API_BASE_URL}/login`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, password })
-            });
-
-            if (!response.ok) {
-                const errorData = await response.json();
-                alert(`Login Failed: ${errorData.detail || 'Invalid credentials'}`);
+            if (!email || !password) {
+                alert('Please enter both email and password.');
                 return;
             }
 
-            const data = await response.json();
-            
-            // Save Session Data
-            localStorage.setItem('userId', data.user.id);
-            localStorage.setItem('userName', data.user.name);
-            localStorage.setItem('userEmail', data.user.email);
-            localStorage.setItem('userGoal', data.user.goal);
+            try {
+                const response = await fetch(`${API_BASE_URL}/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
 
-            // Redirect based on whether they have a goal
-            if (data.user.goal) {
-                window.location.href = '../personalized_roadmap/code.html';
-            } else {
-                window.location.href = '../onboarding_goal_selection/code.html';
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    alert(`Login Failed: ${errorData.detail || 'Invalid credentials'}`);
+                    return;
+                }
+
+                const data = await response.json();
+
+                // Save Session Data
+                localStorage.setItem('userId', data.user.id);
+                localStorage.setItem('userName', data.user.name);
+                localStorage.setItem('userEmail', data.user.email);
+                localStorage.setItem('userGoal', data.user.goal);
+
+                // Redirect based on whether they have a goal
+                if (data.user.goal) {
+                    window.location.href = '../personalized_roadmap/code.html';
+                } else {
+                    window.location.href = '../onboarding_goal_selection/code.html';
+                }
+
+            } catch (error) {
+                console.error('Login Error:', error);
+                alert('A network error occurred. Please try again.');
             }
+        });
+    </script>
+</body>
 
-        } catch (error) {
-            console.error('Login Error:', error);
-            alert('A network error occurred. Please try again.');
-        }
-    });
-</script>
-</body></html>
+</html>
